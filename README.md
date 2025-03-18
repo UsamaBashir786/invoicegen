@@ -21,3 +21,7 @@ A PHP and MySQL-based invoice generator application.
 - MySQL
 - Tailwind CSS
 - JavaScript
+
+git add .
+git commit -m "first commit"
+git push -u origin main
