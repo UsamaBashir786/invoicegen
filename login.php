@@ -124,7 +124,7 @@
         <!-- Desktop Navigation -->
         <div class="hidden md:flex items-center space-x-4">
           <a href="register.php" class="text-dark-600 hover:text-primary-600 font-medium transition-colors">Register</a>
-          <a href="#" class="px-5 py-2 gradient-primary hover:opacity-90 text-white font-medium rounded-xl transition-all shadow-sm shadow-primary-300">
+          <a href="contact-sales.php" class="px-5 py-2 gradient-primary hover:opacity-90 text-white font-medium rounded-xl transition-all shadow-sm shadow-primary-300">
             Contact Sales
           </a>
         </div>

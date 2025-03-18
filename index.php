@@ -1116,7 +1116,7 @@
 
       <div class="mt-16 text-center">
         <div class="inline-flex items-center text-primary-600 font-semibold cursor-pointer hover:text-primary-700 transition-colors">
-          <span>Read more customer stories</span>
+          <span><a href="testimonials.php">Read more customer stories</a></span>
           <i class="fas fa-arrow-right ml-2"></i>
         </div>
       </div>
