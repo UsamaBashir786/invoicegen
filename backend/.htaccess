@@ -1,0 +1,4 @@
+# URL Rewriting Rules
+RewriteEngine On
+RewriteBase /invoice-generator/
+# Add your rewrite rules here

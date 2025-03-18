@@ -1,0 +1,3 @@
+<?php
+// Invoice controller logic
+?>

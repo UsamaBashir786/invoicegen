@@ -1,0 +1,14 @@
+# IDE files
+.vscode/
+.idea/
+
+# Config files with sensitive information
+/backend/config/db.php
+
+# Uploaded files
+/uploads/**/*
+!/uploads/invoices/.gitkeep
+!/uploads/users/.gitkeep
+
+# Logs
+*.log
