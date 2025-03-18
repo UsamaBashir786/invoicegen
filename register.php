@@ -305,19 +305,17 @@
                     </div>
                   </div>
                 </div>
-
                 <div>
-                  <label for="cnic-card" class="block text-sm font-medium text-dark-700 mb-2">CNIC Card <span class="text-red-500">*</span></label>
-                  <div class="file-input-label w-full">
-                    <div class="flex items-center justify-center w-full px-3 py-2 border border-dark-300 border-dashed rounded-lg hover:bg-dark-50 cursor-pointer">
-                      <input id="cnic-card" name="cnic-card" type="file" accept="image/*, application/pdf" required class="file-input">
-                      <div class="flex items-center">
-                        <i class="fas fa-upload text-dark-400 mr-2"></i>
-                        <span class="text-dark-500 text-sm">Upload CNIC card (front & back)</span>
-                      </div>
+                  <label for="cnic-number" class="block text-sm font-medium text-dark-700 mb-2">CNIC Number <span class="text-red-500">*</span></label>
+                  <div class="relative">
+                    <input id="cnic-number" name="cnic-number" type="text" required
+                      class="appearance-none relative block w-full px-3 py-2 border border-dark-300 placeholder-dark-500 text-dark-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
+                      placeholder="00000-0000000-0">
+                    <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                      <i class="fas fa-id-card text-dark-400"></i>
                     </div>
                   </div>
-                  <p class="mt-1 text-xs text-dark-500">Upload front and back images in a single PDF or as separate images</p>
+                  <p class="mt-1 text-xs text-dark-500">Enter your CNIC number in the format: 00000-0000000-0</p>
                 </div>
               </div>
             </div>
@@ -407,6 +405,28 @@
           textSpan.textContent = fileName;
         }
       });
+    });
+    // Auto-format CNIC number with dashes
+    document.getElementById('cnic-number').addEventListener('input', function(e) {
+      // Get input value and remove all non-digits
+      let input = e.target.value.replace(/\D/g, '');
+
+      // Don't allow more than 13 digits
+      if (input.length > 13) {
+        input = input.substring(0, 13);
+      }
+
+      // Format with dashes
+      if (input.length > 5 && input.length <= 12) {
+        // Format as: XXXXX-XXXXXXX
+        input = input.substring(0, 5) + '-' + input.substring(5);
+      } else if (input.length > 12) {
+        // Format as: XXXXX-XXXXXXX-X
+        input = input.substring(0, 5) + '-' + input.substring(5, 12) + '-' + input.substring(12);
+      }
+
+      // Update the input value
+      e.target.value = input;
     });
   </script>
 </body>

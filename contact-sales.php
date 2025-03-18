@@ -321,7 +321,34 @@
       </div>
     </div>
   </footer>
+<!-- Scroll to Top Button -->
+<button id="scrollToTopBtn" class="fixed bottom-6 right-6 w-12 h-12 rounded-full gradient-primary shadow-lg z-50 text-white flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-90 focus:outline-none">
+  <i class="fas fa-arrow-up"></i>
+</button>
 
+<script>
+  // Scroll to top button functionality
+  const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+  
+  // Show/hide the button based on scroll position
+  window.addEventListener('scroll', function() {
+    if (window.pageYOffset > 300) {
+      scrollToTopBtn.classList.remove('opacity-0');
+      scrollToTopBtn.classList.add('opacity-100');
+    } else {
+      scrollToTopBtn.classList.remove('opacity-100');
+      scrollToTopBtn.classList.add('opacity-0');
+    }
+  });
+  
+  // Smooth scroll to top when the button is clicked
+  scrollToTopBtn.addEventListener('click', function() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+</script>
   <script>
     // Mobile menu toggle
     document.getElementById('mobile-menu-button').addEventListener('click', function() {
@@ -329,5 +356,6 @@
       mobileMenu.classList.toggle('hidden');
     });
   </script>
+  
 </body>
 </html>
